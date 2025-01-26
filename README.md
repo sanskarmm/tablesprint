@@ -1,130 +1,134 @@
-# Tablesprint
+Tablesprint
+Description: Tablesprint is a web application designed for managing products, categories, and subcategories. It offers a robust interface for product management with features like user registration, authentication, and data storage through MySQL. This project provides an intuitive and easy-to-use platform for managing a diverse range of items.
 
-## Description
+Features
+User Registration & Authentication: Secure login system with JWT authentication.
+CRUD Operations: Perform create, read, update, and delete operations on products, categories, and subcategories.
+Client-Side Rendering: The frontend is powered by React for a dynamic user experience.
+JWT-based Authentication: Ensures secure user sessions.
+MySQL Database: Relational database used for managing user and product data.
+Cloudinary Integration: For managing and storing images used for products.
+Tech Stack
+Frontend:
 
-A web application for managing products, categories, and subcategories.
+React.js
+Axios (for HTTP requests)
+Bootstrap (for responsive UI)
+Backend:
 
-## Features
+Node.js
+Express.js (Web framework for Node.js)
+JWT (for authentication)
+MySQL (for database)
+Cloudinary (for image storage)
+Other Tools:
 
-* User registration and authentication
-* CRUD operations on products, categories, and subcategories
-* Client-side rendering with React
-* JWT-based authentication
-* MySQL for data storage
+npm (Package manager for dependencies)
+bcryptjs (for hashing passwords)
+Prerequisites
+Before you begin, ensure you have the following installed on your local machine:
 
-## Prerequisites
-
-* Node.js
-* npm
-* MySQL
-
-## Installation
-
-### Steps
+Node.js (v14 or higher)
+npm (v6 or higher)
+MySQL (v5.7 or higher)
+Installation
+Follow these steps to set up the project locally:
 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/carnage111/tablesprint.git
+bash
 
+git clone https://github.com/carnage111/tablesprint.git
 2. Navigate to the project directory:
-     ```sh
-    cd tablesprint
+bash
 
-3. Create a `.env` file with the necessary variables:
-    ```
-    PORT=5000
-    CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
-    CLOUDINARY_API_KEY=your-cloudinary-api-key
-    CLOUDINARY_API_SECRET=your-cloudinary-api-secret
-    JWT_SECRET=your-jwt-secret
-    MYSQL_HOST=localhost
-    MYSQL_USERNAME=your-mysql-username
-    MYSQL_PASSWORD=your-mysql-password
-    MYSQL_DATABASE_NAME=your-mysql-database-name
-    ```
+cd tablesprint
+3. Create a .env file with the necessary environment variables:
+In the root of the project, create a .env file and add the following variables:
+
+env
+
+PORT=5000
+CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
+CLOUDINARY_API_KEY=your-cloudinary-api-key
+CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+JWT_SECRET=your-jwt-secret
+MYSQL_HOST=localhost
+MYSQL_USERNAME=your-mysql-username
+MYSQL_PASSWORD=your-mysql-password
+MYSQL_DATABASE_NAME=your-mysql-database-name
+Note: Replace your-* placeholders with your actual values.
 
 4. Install dependencies:
-    ```sh
-    npm i
+Run the following command to install the necessary packages for both frontend and backend:
 
-5. navigate to frontend and backend directories on seperate terminals
-    ```sh
-    cd backend
-    cd frontend
+bash
 
-6. Start the development server on both terminals: 
-    ```sh
-    npm run dev
+npm install
+5. Start the development server:
+Open two terminals, one for the backend and one for the frontend.
 
-## Usage
+Backend:
+bash
 
-### Register a User
+cd backend
+npm run dev
+Frontend:
+bash
 
-1. Open postman or use thunderclient(VS Code Extension) and create a request on this endpoint `http://localhost:5000/api/v1/user/register` to register an user.
+cd frontend
+npm run dev
+Usage
+Register a User
+To register a user, you can either use Postman or ThunderClient (VS Code Extension) to send a POST request to:
 
-Alternative: Manually Insert the User into MySQL
-You can generate a hashed password using Node.js, Python, or an online tool. Here's an example using Node.js and the bcryptjs library:
-    
-    const bcrypt = require('bcryptjs');
-    const password = "12345678";
-    const hashedPassword = bcrypt.hashSync(password, 10);
-    console.log(hashedPassword);
+bash
 
-This will output a hashed version of 12345678 that you can use in your SQL query.
-Replace the hashed_password_here with the hashed password you generated and run the following query in your MySQL database:
-
-    INSERT INTO users (name, email, password) 
-    VALUES ('bobb', 'bobb@gmail.com', 'hashed_password_here');
-
-### Example User
-
-```json
+POST http://localhost:5000/api/v1/user/register
+Example User JSON:
+json
 {
-  "name": "bobb",
-  "email": "bobb@gmail.com",
+  "name": "john doe",  // Updated name
+  "email": "johndoe@gmail.com",
   "password": "12345678",
   "confirmPassword": "12345678"
 }
-```
+Alternatively, you can manually insert the user into the MySQL database. Here's how you can generate a hashed password using Node.js:
 
-or manually insert into 
+js
+Copy
+Edit
+const bcrypt = require('bcryptjs');
+const password = "12345678";
+const hashedPassword = bcrypt.hashSync(password, 10);
+console.log(hashedPassword);
+Once you generate the hashed password, you can insert the user into your database:
 
-### Login
+sql
 
-1. After registering, navigate to `http://localhost:5173/` in your browser.
+INSERT INTO users (name, email, password) 
+VALUES ('john doe', 'johndoe@gmail.com', 'hashed_password_here');
+Login
+After successfully registering, navigate to http://localhost:5173/ in your browser.
 
-2. Enter your registered email and password.
+Enter your registered email and password.
+Click the Login button.
+Dashboard
+Once logged in, you will be redirected to the dashboard, where you can perform actions on products, categories, and subcategories.
 
-3. Click on the "Login" button.
+Add Items: Use the Add Category, Add Subcategory, and Add Product buttons in their respective sections.
+Edit/Delete Items: You can modify or remove items by clicking on the edit or delete icons in the action column.
+Database Schema
+Here is an overview of the key tables in the database:
 
-### Dashboard
+Users Table:
 
-After logging in, you will be redirected to the dashboard. The dashboard has a left panel to cycle between categories, subcategories, and products.
+Stores user information (name, email, password).
+Categories Table:
 
-### 1. Adding Categories, Subcategories, and products
+Stores category data for organizing products.
+Subcategories Table:
 
-1. Click on the add category/add subcategory/ add product button in respective components and add the necessary details to add the items
+Stores subcategory data that belongs to categories.
+Products Table:
 
-### 2. Editing and deleting
-
-1. Click on the edit or delete icons in the action column to perform necessary actions.
-
-
-## Screenshots
-
-![Screenshot 1](https://github.com/carnage111/tablesprint/blob/main/images/login_1.png)
-![Screenshot 2](https://github.com/carnage111/tablesprint/blob/main/images/dashboard.png)
-![Screenshot 3](https://github.com/carnage111/tablesprint/blob/main/images/add_prod.png)
-![Screenshot 4](https://github.com/carnage111/tablesprint/blob/main/images/device_responsive.png)
-
-## License
-
-This project is licensed under the MIT License.
-
-## Author
-
-The Carnage
-
----
-
-Happy Coding!🚀
+Stores information about products, including their categories and subcategories.
