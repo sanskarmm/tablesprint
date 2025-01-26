@@ -1,43 +1,52 @@
-Tablesprint
-Description: Tablesprint is a web application designed for managing products, categories, and subcategories. It offers a robust interface for product management with features like user registration, authentication, and data storage through MySQL. This project provides an intuitive and easy-to-use platform for managing a diverse range of items.
+# Tablesprint
 
-Features
-User Registration & Authentication: Secure login system with JWT authentication.
-CRUD Operations: Perform create, read, update, and delete operations on products, categories, and subcategories.
-Client-Side Rendering: The frontend is powered by React for a dynamic user experience.
-JWT-based Authentication: Ensures secure user sessions.
-MySQL Database: Relational database used for managing user and product data.
-Cloudinary Integration: For managing and storing images used for products.
-Tech Stack
-Frontend:
+## Description
 
-React.js
-Axios (for HTTP requests)
-Bootstrap (for responsive UI)
-Backend:
+**Tablesprint** is a web application designed for managing products, categories, and subcategories. It provides a robust interface for product management with features like user registration, authentication, and data storage through MySQL. This project delivers an intuitive and easy-to-use platform for managing a diverse range of items.
 
-Node.js
-Express.js (Web framework for Node.js)
-JWT (for authentication)
-MySQL (for database)
-Cloudinary (for image storage)
-Other Tools:
+## Features
 
-npm (Package manager for dependencies)
-bcryptjs (for hashing passwords)
-Prerequisites
+- **User Registration & Authentication**: Secure login system with JWT authentication.
+- **CRUD Operations**: Perform create, read, update, and delete operations on products, categories, and subcategories.
+- **Client-Side Rendering**: The frontend is powered by React for a dynamic user experience.
+- **JWT-based Authentication**: Ensures secure user sessions.
+- **MySQL Database**: Relational database used for managing user and product data.
+- **Cloudinary Integration**: For managing and storing images used for products.
+
+## Tech Stack
+
+### Frontend:
+- ![React](https://img.shields.io/badge/React-16.8+-61DAFB?style=flat&logo=react&logoColor=white) React.js
+- ![Axios](https://img.shields.io/badge/Axios-0.21.1-5A29E4?style=flat&logo=axios&logoColor=white) Axios (for HTTP requests)
+- ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.0-563D7C?style=flat&logo=bootstrap&logoColor=white) Bootstrap (for responsive UI)
+
+### Backend:
+- ![Node.js](https://img.shields.io/badge/Node.js-14.x-339933?style=flat&logo=node.js&logoColor=white) Node.js
+- ![Express](https://img.shields.io/badge/Express.js-4.x-000000?style=flat&logo=express&logoColor=white) Express.js (Web framework for Node.js)
+- ![JWT](https://img.shields.io/badge/JWT-5.0-000000?style=flat&logo=json-web-tokens&logoColor=white) JWT (for authentication)
+- ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white) MySQL (for database)
+- ![Cloudinary](https://img.shields.io/badge/Cloudinary-Cloud-2B62B1?style=flat&logo=cloudinary&logoColor=white) Cloudinary (for image storage)
+
+### Other Tools:
+- ![npm](https://img.shields.io/badge/npm-7.x-CB3837?style=flat&logo=npm&logoColor=white) npm (Package manager for dependencies)
+- ![bcryptjs](https://img.shields.io/badge/bcryptjs-5.0-6638d1?style=flat&logo=bcrypt&logoColor=white) bcryptjs (for hashing passwords)
+
+## Prerequisites
+
 Before you begin, ensure you have the following installed on your local machine:
 
-Node.js (v14 or higher)
-npm (v6 or higher)
-MySQL (v5.7 or higher)
-Installation
+- **Node.js** (v14 or higher)
+- **npm** (v6 or higher)
+- **MySQL** (v5.7 or higher)
+
+## Installation
+
 Follow these steps to set up the project locally:
 
-1. Clone the repository:
-bash
+### 1. Clone the repository:
+```bash
+git clone https://[github.com//sanskarmm/tablesprint.git]
 
-git clone https://github.com/carnage111/tablesprint.git
 2. Navigate to the project directory:
 bash
 
