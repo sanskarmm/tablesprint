@@ -1,60 +1,64 @@
-# Tablesprint
+🚀 Tablesprint
 
-## Description
+📌 Description
 
-**Tablesprint** is a web application designed for managing products, categories, and subcategories. It provides a robust interface for product management with features like user registration, authentication, and data storage through MySQL. This project delivers an intuitive and easy-to-use platform for managing a diverse range of items.
+Tablesprint is a modern and intuitive web application for managing products, categories, and subcategories. Featuring a powerful interface, it enables seamless product management with user authentication, secure data storage, and a responsive UI.
 
-## Features
+✨ Features
 
-- **User Registration & Authentication**: Secure login system with JWT authentication.
-- **CRUD Operations**: Perform create, read, update, and delete operations on products, categories, and subcategories.
-- **Client-Side Rendering**: The frontend is powered by React for a dynamic user experience.
-- **JWT-based Authentication**: Ensures secure user sessions.
-- **MySQL Database**: Relational database used for managing user and product data.
-- **Cloudinary Integration**: For managing and storing images used for products.
+✔ User Authentication - Secure JWT-based authentication.✔ CRUD Operations - Manage products, categories, and subcategories effortlessly.✔ Client-Side Rendering - Built with React for a smooth user experience.✔ MySQL Database - Relational database for structured data management.✔ Cloudinary Integration - Efficient image storage and management.✔ Responsive UI - Fully optimized for various screen sizes with Bootstrap.
 
-## Tech Stack
+🛠 Tech Stack
 
-### Frontend:
-- ![React](https://img.shields.io/badge/React-16.8+-61DAFB?style=flat&logo=react&logoColor=white) React.js
-- ![Axios](https://img.shields.io/badge/Axios-0.21.1-5A29E4?style=flat&logo=axios&logoColor=white) Axios (for HTTP requests)
-- ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.0-563D7C?style=flat&logo=bootstrap&logoColor=white) Bootstrap (for responsive UI)
+🔹 Frontend:
 
-### Backend:
-- ![Node.js](https://img.shields.io/badge/Node.js-14.x-339933?style=flat&logo=node.js&logoColor=white) Node.js
-- ![Express](https://img.shields.io/badge/Express.js-4.x-000000?style=flat&logo=express&logoColor=white) Express.js (Web framework for Node.js)
-- ![JWT](https://img.shields.io/badge/JWT-5.0-000000?style=flat&logo=json-web-tokens&logoColor=white) JWT (for authentication)
-- ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white) MySQL (for database)
-- ![Cloudinary](https://img.shields.io/badge/Cloudinary-Cloud-2B62B1?style=flat&logo=cloudinary&logoColor=white) Cloudinary (for image storage)
+⚛️ React.js
 
-### Other Tools:
-- ![npm](https://img.shields.io/badge/npm-7.x-CB3837?style=flat&logo=npm&logoColor=white) npm (Package manager for dependencies)
-- ![bcryptjs](https://img.shields.io/badge/bcryptjs-5.0-6638d1?style=flat&logo=bcrypt&logoColor=white) bcryptjs (for hashing passwords)
+🔗 Axios (for HTTP requests)
 
-## Prerequisites
+🎨 Bootstrap (for responsive UI)
 
-Before you begin, ensure you have the following installed on your local machine:
+🔹 Backend:
 
-- **Node.js** (v14 or higher)
-- **npm** (v6 or higher)
-- **MySQL** (v5.7 or higher)
+🚀 Node.js
 
-## Installation
+🔥 Express.js (Web framework for Node.js)
 
-Follow these steps to set up the project locally:
+🔐 JWT (for authentication)
 
-### 1. Clone the repository:
-```bash
-git clone https://[github.com//sanskarmm/tablesprint.git]
+🗄 MySQL (for database)
 
-2. Navigate to the project directory:
-bash
+☁️ Cloudinary (for image storage)
+
+🔹 Other Tools:
+
+📦 npm (Package manager)
+
+🔑 bcryptjs (For hashing passwords)
+
+📋 Prerequisites
+
+Ensure you have the following installed on your local machine:
+
+🟢 Node.js (v14 or higher)
+
+📦 npm (v6 or higher)
+
+🗄 MySQL (v5.7 or higher)
+
+🚀 Installation
+
+1️⃣ Clone the repository:
+
+git clone https://github.com/sanskarmm/tablesprint.git
+
+2️⃣ Navigate to the project directory:
 
 cd tablesprint
-3. Create a .env file with the necessary environment variables:
-In the root of the project, create a .env file and add the following variables:
 
-env
+3️⃣ Set up environment variables:
+
+Create a .env file in the root directory and add the following:
 
 PORT=5000
 CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
@@ -65,79 +69,58 @@ MYSQL_HOST=localhost
 MYSQL_USERNAME=your-mysql-username
 MYSQL_PASSWORD=your-mysql-password
 MYSQL_DATABASE_NAME=your-mysql-database-name
-Note: Replace your-* placeholders with your actual values.
 
-4. Install dependencies:
-Run the following command to install the necessary packages for both frontend and backend:
+🔹 Replace placeholders with actual values.
 
-bash
+4️⃣ Install dependencies:
 
 npm install
-5. Start the development server:
-Open two terminals, one for the backend and one for the frontend.
+
+5️⃣ Start the development server:
 
 Backend:
-bash
 
 cd backend
 npm run dev
+
 Frontend:
-bash
 
 cd frontend
 npm run dev
-Usage
-Register a User
-To register a user, you can either use Postman or ThunderClient (VS Code Extension) to send a POST request to:
 
-bash
+🔑 User Authentication
+
+📌 Register a User
+
+Use Postman or ThunderClient to send a POST request to:
 
 POST http://localhost:5000/api/v1/user/register
+
 Example User JSON:
-json
+
 {
-  "name": "john doe",  // Updated name
+  "name": "John Doe",
   "email": "johndoe@gmail.com",
   "password": "12345678",
   "confirmPassword": "12345678"
 }
-Alternatively, you can manually insert the user into the MySQL database. Here's how you can generate a hashed password using Node.js:
 
-js
-Copy
-Edit
+Alternatively, generate a hashed password using Node.js:
+
 const bcrypt = require('bcryptjs');
 const password = "12345678";
 const hashedPassword = bcrypt.hashSync(password, 10);
 console.log(hashedPassword);
-Once you generate the hashed password, you can insert the user into your database:
 
-sql
+Insert the user manually into MySQL:
 
 INSERT INTO users (name, email, password) 
-VALUES ('john doe', 'johndoe@gmail.com', 'hashed_password_here');
-Login
-After successfully registering, navigate to http://localhost:5173/ in your browser.
+VALUES ('John Doe', 'johndoe@gmail.com', 'hashed_password_here');
 
-Enter your registered email and password.
-Click the Login button.
-Dashboard
-Once logged in, you will be redirected to the dashboard, where you can perform actions on products, categories, and subcategories.
+📊 Dashboard & Features
 
-Add Items: Use the Add Category, Add Subcategory, and Add Product buttons in their respective sections.
-Edit/Delete Items: You can modify or remove items by clicking on the edit or delete icons in the action column.
-Database Schema
-Here is an overview of the key tables in the database:
+🎯 Login - Visit http://localhost:5173/ to log in.🎯 Manage Items - Add, edit, and delete products, categories, and subcategories.🎯 Interactive UI - Perform actions effortlessly through an intuitive dashboard.
 
-Users Table:
+📂 Database Schema
 
-Stores user information (name, email, password).
-Categories Table:
-
-Stores category data for organizing products.
-Subcategories Table:
-
-Stores subcategory data that belongs to categories.
-Products Table:
-
-Stores information about products, including their categories and subcategories.
+🔹 Users Table - Stores user details (name, email, password).🔹 Categories Table - Stores product categories.🔹 Subcategories Table - Stores category sub-divisions.🔹 Products Table - Stores product details, including category and subcategor
